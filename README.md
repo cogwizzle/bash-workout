@@ -4,7 +4,9 @@ A small tool to help you run through your workout routine via bash.
 ## Installation
 ```bash
 wget https://raw.githubusercontent.com/cogwizzle/bash-workout/main/bash-workout -O /usr/local/bin/bash-workout
+chmod +x /usr/local/bin/bash-workout
 ```
+_You may need to run this command as root._
 
 ## Usage
 Create a csv file with your workout routine. The first column is the workout. The second column is the time in seconds.
