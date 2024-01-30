@@ -1,0 +1,50 @@
+#!/bin/bash
+
+# Read in CSV with workout name, and duration in seconds.
+
+do_nothing() {
+    echo -n ""
+}
+
+if [ -z "$SPEACH_COMMAND" ]; then
+    # if say is not available, do nothing
+    if ! command -v say &> /dev/null
+    then
+        SPEACH_COMMAND="do_nothing"
+    else
+        SPEACH_COMMAND="say"
+    fi
+fi
+
+
+# Default break duration is 30 seconds.
+if [ -z "$BREAK_DURATION" ]; then
+    BREAK_DURATION=30
+fi
+
+function do_exercise() {
+    exercise=$1
+    duration=$2
+    $SPEACH_COMMAND "Starting $exercise"
+    echo "Starting $exercise"
+    sleep "$duration"
+}
+
+function do_break() {
+    $SPEACH_COMMAND "Break!"
+    echo "Break!"
+    sleep "$BREAK_DURATION"
+}
+
+# Read piped input using read
+while IFS= read -r line; do
+    # Split line by comma
+    IFS=',' read -r -a array <<< "$line"
+    exercise=${array[0]}
+    duration=${array[1]}
+    do_exercise "$exercise" "$duration"
+    do_break
+done
+
+$SPEACH_COMMAND "Workout complete!"
+echo "Done!"
