@@ -3,7 +3,7 @@ A small tool to help you run through your workout routine via bash.
 
 ## Installation
 ```bash
-wget https://raw.githubusercontent.com/cogwizzle/bash-workout/bash-workout -O /usr/local/bin/bash-workout
+wget https://raw.githubusercontent.com/cogwizzle/bash-workout/main/bash-workout -O /usr/local/bin/bash-workout
 ```
 
 ## Usage
