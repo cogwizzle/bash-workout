@@ -31,5 +31,5 @@ export BREAK_DURATION=30 ; cat workout.csv | bash-workout
 
 You can adjust the text to speach command by setting the `SPEACH_COMMAND`.
 ```bash
-export SPEACH_COMMAND="say" ; cat workout.csv | bash-workout
+export SPEACH_COMMAND="espeak" ; cat workout.csv | bash-workout
 ```
