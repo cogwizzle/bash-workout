@@ -6,13 +6,13 @@ do_nothing() {
     echo -n ""
 }
 
-if [ -z "$SPEACH_COMMAND" ]; then
+if [ -z "$SPEECH_COMMAND" ]; then
     # if say is not available, do nothing
     if ! command -v say &> /dev/null
     then
-        SPEACH_COMMAND="do_nothing"
+        SPEECH_COMMAND="do_nothing"
     else
-        SPEACH_COMMAND="say"
+        SPEECH_COMMAND="say"
     fi
 fi
 
@@ -25,13 +25,13 @@ fi
 function do_exercise() {
     exercise=$1
     duration=$2
-    $SPEACH_COMMAND "Starting $exercise"
+    $SPEECH_COMMAND "Starting $exercise"
     echo "Starting $exercise"
     sleep "$duration"
 }
 
 function do_break() {
-    $SPEACH_COMMAND "Break!"
+    $SPEECH_COMMAND "Break!"
     echo "Break!"
     sleep "$BREAK_DURATION"
 }
@@ -46,5 +46,5 @@ while IFS= read -r line; do
     do_break
 done
 
-$SPEACH_COMMAND "Workout complete!"
+$SPEECH_COMMAND "Workout complete!"
 echo "Done!"

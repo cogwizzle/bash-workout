@@ -31,7 +31,7 @@ You can adjust the break duration by setting the `BREAK_DURATION`.
 export BREAK_DURATION=30 ; cat workout.csv | bash-workout
 ```
 
-You can adjust the text to speach command by setting the `SPEACH_COMMAND`.
+You can adjust the text to speach command by setting the `SPEECH_COMMAND`.
 ```bash
-export SPEACH_COMMAND="espeak" ; cat workout.csv | bash-workout
+export SPEECH_COMMAND="espeak" ; cat workout.csv | bash-workout
 ```
